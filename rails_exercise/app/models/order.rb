@@ -1,7 +1,7 @@
 class Order < ApplicationRecord
   belongs_to :customer
-  has_many :items, -> { order :name }, dependent: :destroy
-  validates_presence_of :customer, :supplier, :address, :item
+  has_many :items, dependent: :destroy
+  validates_presence_of :customer, :address
 
   def total
     items.to_a.sum(&:total)

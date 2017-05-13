@@ -21,7 +21,7 @@ class InitialSchema < ActiveRecord::Migration[5.1]
       o.timestamps null: false
     end
 
-    create_table :order_items do |i|
+    create_table :items do |i|
       i.references :supplier, index: true, foreign_key: true
       i.references :order, null: false, index: true, foreign_key: true
       i.references :product, null: false, index: true, foreign_key: true

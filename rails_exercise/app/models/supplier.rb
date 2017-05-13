@@ -1,4 +1,4 @@
 class Supplier < ApplicationRecord
-  has_many :order_items
+  has_many :items
   validates :name, presence: true, uniqueness: true
 end
